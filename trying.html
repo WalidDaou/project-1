@@ -10,20 +10,22 @@
             padding: 0;
         }
 
+        body {
+            height: 100vh;
+            display: flex;
+        }
         /* Styles for card component */
         .card {
             width: 300px;
+            height: 400px;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.2); /* Red tone box-shadow */
+            box-shadow: 10px 10px 10px rgba(255, 0, 0, 0.1); /* Red tone box-shadow */
+            background-color: aqua;
         }
 
         /* Styles for the dark version of the card */
-        .card--dark {
-            background-color: #333333;
-            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5); /* Red tone box-shadow for dark version */
-            color: #cccccc; /* Text color for dark version */
-        }
+       
 
         /* Styles for card header */
         .card__header {
@@ -53,6 +55,18 @@
             margin-bottom: 8px;
             position: relative;
         }
+         .card__title::after {
+            content: attr(title);
+            position: absolute;
+            opacity: 0;
+            width: 140px;
+
+            
+         } 
+         .card__title:hover::after{
+            opacity: 0.5;
+            background-color: aqua;
+         }
 
         /* Styles for card text */
         .card__text {
@@ -69,18 +83,29 @@
         }
 
         /* Styles for card button */
-        .card__button {
+        .card--dark .card__button {
             text-decoration: none;
             background-color: #1e824c; /* Dark green background color */
             color: #ffffff;
             padding: 8px 16px;
-            transition: background-color 0.3s ease;
+            transition: background-color 1s ease;
         }
 
-        .card__button:hover {
-            background-color: #1a6c3d; /* Dark green background color on hover */
+        .card--dark .card__button:hover {
+            background-color: #3b6c1a; /* Dark green background color on hover */
         }
-    </style>
+           
+        .card--dark {
+            background-color: #333333;
+            box-shadow: 10px 4px 8px rgba(255, 0, 0, 0.5); /* Red tone box-shadow for dark version */
+            color: #cccccc; /* Text color for dark version */
+        }        
+
+
+
+
+
+</style>
     <title>Card Component Example</title>
 </head>
 <body>
@@ -90,9 +115,9 @@
             <div>Left Content</div>
             <div>Right Content</div>
         </div>
-        <img src="your-image-url.jpg" alt="Card Image" class="card__image">
+        <img src="images\OIP.jpg" alt="Card Image" class="card__image">
         <div class="card__content">
-            <h2 class="card__title" title="Tooltip Text">Card Title</h2>
+            <h2 class="card__title" title="Title" > Card Title</h2>
             <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ligula in libero efficitur bibendum. Donec sit amet facilisis est.</p>
             <span class="card__price">$19.99</span>
             <a href="#" class="card__button">Buy Now</a>
