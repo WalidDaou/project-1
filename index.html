@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Header</title>
+    <title>Document</title>
     <style>
       * {
         box-sizing: border-box;
@@ -11,103 +12,158 @@
         padding: 0;
       }
 
-      header {
-        background-color: #333;
-        padding: 20px;
+      body {
+        padding: 40px;
+      }
+
+
+
+
+
+
+
+
+    </style>
+
+    <style>
+      .card {
+        width: 300px;
+        height: 500px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.9);
+      }
+
+      .card__header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
       }
-    </style>
-    <style>
-      .logo {
-        color: #fff;
-        font-size: 24px;
+
+      .card__image {
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+      }
+
+      .card__content {
+        padding: 16px;
+      }
+
+      .card__title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        position: relative;
+      }
+
+      .card__title::after {
+        content: attr(title);
+        position: absolute;
+        width: 140px;
+        opacity: 0;
+      }
+
+      .card__title:hover::after {
+        opacity: 1;
+      }
+
+      .card__text {
+        font-size: 14px;
+        color: #666666;
+        margin-bottom: 16px;
+      }
+
+      .card__price {
+        font-size: 16px;
+        margin-top: 8px;
         font-weight: bold;
       }
-    </style>
 
+      .card__button {
+        text-decoration: none;
+        background-color: #4caf50;
+        padding: 8px 16px;
+        transition: background-color 1s ease;
+      }
+
+      .card__button:hover {
+        background-color: #45a049;
+      }
+
+      .card--dark {
+        background-color: #333333;
+        box-shadow: 1px 4px 8px red;
+        color: #cccccc;
+      }
+
+      .card--dark .card__button {
+        background-color: #1e824c;
+      }
+      .card--dark .card__button:hover {
+        color: #1a6c3d;
+      }
+    </style>
+    
     <style>
-      nav ul {
-        display: flex;
-        list-style: none;
+      #cards-grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-gap: 40px;
+        justify-items: center;
+        align-items: center;
+      
       }
+
+
+
+
+
+
+
+
     </style>
-
-    <style>
-      nav ul li {
-        margin: 20px;
-      }
-    </style>
-
-    <style>
-      nav ul li a {
-        color: white;
-        font-size: 16px;
-      }
-
-      nav li:last-child a {
-        /* border: 1px solid red; */
-        /* background-color: blue; */
-        color: yellow;
-        text-transform: uppercase;
-      }
-    </style>
-
-    <!-- for screens under 600px -->
-    <style>
-      @media (max-width: 600px) {
-        header {
-          /* display: flex; */
-          flex-direction: column;
-        }
-
-        nav ul {
-          display: flex;
-          flex-direction: column;
-        }
-        nav ul li {
-          margin-left: 0;
-          margin-bottom: 10px;
-        }
-      }
-    </style>
-
-    <style>
-      .flicker-effect {
-        animation: flicker 1s infinite;
-      }
-
-      @keyframes flicker {
-        0% {
-          opacity: 0;
-        }
-
-        100% {
-          opacity: 1;
-        }
-      }
-    </style>
+    <!-- session final -->
+    <!-- Task: add styles for the element with ID 'cards-grid' -->
+    <!-- Hint: set display to grid, with columns template set to auto-fit with minmax 280px -> 1fr -->
+    <!-- Hint: add a gap of 20 pixels between the child elements -->
+    <!-- Hint: use justify-content: center; to center cards horizontally -->
+    <!-- Hint: use align-content: center; to center cards vertically -->
   </head>
   <body>
-    <header>
-      <div class="logo">Logo</div>
-      <nav>
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Services</a>
-          </li>
-          <li class="flicker-effect">
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div id="cards-grid">
+  <div class="card"></div>   
+  <div class="card"></div>   
+  <div class="card"></div>   
+  <div class="card"></div>   
+    </div>
+    <div id="cards-grid "></div>
+<script>
+   for (let i = 0; i < 20; i++){
+    console.log(i);
+    const card = document.createElement("div");
+          card.classList.add("card")
+
+  }
+//function alerthello (){ alert ('hello') }
+ let card =document.querySelector ('.card')
+ //card.addEventListener('click',alerthello)
+ //console.log('user clicked the first card')
+ //alert ('hello')
+
+</script>
+
+    <!-- session final -->
+    <!-- Task: add a script with the logic to populate element corresponding to selector '#cards-grid' with 20 cards -->
+    <!-- Hint: you can use chatGPT if you don't know JavaScript yet
+      - get a reference of the container element '#cards-grid'
+      - run a loop for N times, N being the number of cards in this case, equal to 20
+      - in each iteration create a card, and append it to the container element
+      - a card should have the following structure: <div class="card"> <img /> <div> <h2 title="...">...</h2> <p>$...</p> <p>Description goes here...</p> <a>Read More</a> </div> </div>
+      - remeber to follow BEM convention when giving each element it's class
+    -->
   </body>
 </html>

@@ -1,94 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+     margin: 0%;
+      padding: 0;
+    }
 
-    <title></title>
-<style>
-.card {
-    border: 2px red solid;
-     width: 500px;
-height: 300px;
-border-radius: 20px;
-overflow: hidden;
-position: relative;
+    body {
+      padding: 40px;
+    }
+  </style>
 
-}
+  <style>
+    .card {
+      width: 300px;
+      height: 500px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.9);
+      margin: 0%;
+    }
 
-img {
-   width: 500px;
-height: 400px;
+    .card__header {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
 
-}
-.text {
-   position:absolute;
-   bottom: 0;
-   left: 0;
-   color: aqua;
-  padding: 20px;
-}
-.toxt {
-position:absolute;
-   bottom: 0;
-   left: 0;
-   color: rgb(0, 255, 55);
-  padding: 20px;
-}
+    .card__image {
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+    }
 
+    .card__content {
+      padding: 16px;
+    }
 
-body {
-    display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
+    .card__title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
+      position: relative;
+    }
 
+    .card__title::after {
+      content: attr(title);
+      position: absolute;
+      width: 140px;
+      opacity: 0;
+    }
 
-}
+    .card__title:hover::after {
+      opacity: 1;
+    }
 
-</style>
+    .card__text {
+      font-size: 14px;
+      color: #666666;
+      margin-bottom: 16px;
+    }
 
+    .card__price {
+      font-size: 16px;
+      margin-top: 8px;
+      font-weight: bold;
+    }
 
+    .card__button {
+      text-decoration: none;
+      background-color: #4caf50;
+      padding: 8px 16px;
+      transition: background-color 1s ease;
+    }
 
+    .card__button:hover {
+      background-color: #45a049;
+    }
 
+    .card--dark {
+      background-color: #333333;
+      box-shadow: 1px 4px 8px red;
+      color: #cccccc;
+    }
 
+    .card--dark .card__button {
+      background-color: #1e824c;
+    }
 
+    .card--dark .card__button:hover {
+      color: #1a6c3d;
+    }
+  </style>
 
-</head>
-<body>
-    <!--will creat a card -->
-    <!--in this caerd i have two layers -->
-<div class="card"> 
-  <div>
-    <img src="images\orlf.webp" alt="">
-  </div>    
- <div class="text">
-<h1>title of image </h1>
-<button> view more</button>
+  <style>
+    #card-grids {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+      gap: 20px;
+    }
+  </style>
 
- </div>
-
-
-
-
-</div> 
-
-
-
-<div class="card"> 
-    <div>
-      <img src="images\OIP.jpg" alt="">
-    </div>    
-   <div class="toxt">
-  <h1>title of image </h1>
-  <button> view more</button>
-  
-   </div>
-</div> 
-  
+  <style>
    
 
+    @media screen and (min-width: 390px) {
+      .card {
+        background-color: lightgray;
+        grid-column: ;
+  width:40%;
+    }
+   body {
+    background-color: #1e824c;
+   }
 
-    <!--the back layer will be an image -->
-    <!---->
+    }
+
+    /* Media query for screens with a width of 600 pixels or more */
+    @media screen and (min-width: 600px) {
+      .card {
+        background-color: lightgray;
+        grid-column: ;
+      }
+      body {
+        background-color: aqua;
+
+
+
+      }
+    }
+
+    /* Media query for screens with a width of 900 pixels or more */
+    @media screen and (min-width: 900px) {
+      .card {
+        background-color: lightblue;
+      }
+      body {
+        background-color:#666666;
+    }
+
+    /* Media query for screens with a width of 1200 pixels or more */
+    @media screen and (min-width: 1200px) {
+      .card {
+        background-color: lightgreen;
+      }
+    }
+  </style>
+  <!-- session final -->
+  <!-- Task: add styles for the element with ID 'cards-grid' -->
+  <!-- Hint: set display to grid, with columns template set to auto-fit with minmax 280px -> 1fr -->
+  <!-- Hint: add a gap of 20 pixels between the child elements -->
+  <!-- Hint: use justify-content: center; to center cards horizontally -->
+  <!-- Hint: use align-content: center; to center cards vertically -->
+</head>
+
+<body>
+
+  <div id="card-grids">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+
+  </div>
+  <!-- session final -->
+  <!-- Task: add a script with the logic to populate element corresponding to selector '#cards-grid' with 20 cards -->
+  <!-- Hint: you can use chatGPT if you don't know JavaScript yet
+      - get a reference of the container element '#cards-grid'
+      - run a loop for N times, N being the number of cards in this case, equal to 20
+      - in each iteration create a card, and append it to the container element
+      - a card should have the following structure: <div class="card"> <img /> <div> <h2 title="...">...</h2> <p>$...</p> <p>Description goes here...</p> <a>Read More</a> </div> </div>
+      - remeber to follow BEM convention when giving each element it's class
+    -->
 </body>
+
 </html>
