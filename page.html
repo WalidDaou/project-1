@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            gap: 0px;
+        }
+
+      
+
+
+        .header__top {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+          position: absolute;
+
+        }
+
+.links{
+margin-right: 0px;
+
+}
+
+        .header__stuff {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows:1fr; 
+        
+
+        }
+
+
+        .header__stuff img {
+            height: 500px;
+            width: 700px;
+ }
+
+       
+
+
+
+        .header__text {
+            margin-left: 50px;
+            margin-right: 300px;
+
+
+
+        }
+
+        .h1 {
+            padding: 35px;
+            font-size: 45px;
+
+
+
+        }
+
+        .button__top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            height: 45px;
+            width: 200px;
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            border-radius: 30px;
+        }
+
+        .media {
+            height: 15px;
+            width: 15px;
+        }
+    </style>
+    <style>
+        .main__text {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+           gap: 0px;
+
+
+        }
+
+        .mainh1 {
+            margin-top: 70px;
+            margin-bottom: 3px;
+        }
+
+        .mainp {
+            margin-top: 0px;
+            opacity: 0.25;
+        }
+
+        .mainh3 {
+
+            margin-top: 0%;
+            margin-bottom: 25px;
+            opacity: 0.6;
+        }
+
+        .main__stuff {
+
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+
+        }
+
+
+
+        .one {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .one img {
+            display: inline-block;
+            width: 30px;
+            height: 25px;
+            padding: 0%;
+            margin: 0%;
+
+
+
+        }
+
+        .underone {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+            margin-top: 30px;
+        }
+
+        .oneh3 {
+            margin: 5px;
+            padding: 0px;
+            opacity: 0.6;
+
+        }
+
+        .main {
+            background-color: rgb(230, 225, 225);
+
+
+        }
+
+        .bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            grid-template-rows: 50% 50%;
+            overflow: hidden;
+
+        }
+
+        .bottom img {
+            height: 500px;
+            width: 700px;
+
+        }
+
+        .bottom__text {
+            margin-top: 30px;
+            margin-left: 60px;
+            margin-right: 5px;
+            display: grid;
+            grid-template-rows: 33% 33% 33%;
+            gap: 75px;
+
+        }
+
+        #p1 {
+            opacity: 0.3;
+            margin: 10px;
+            padding: 0px;
+        }
+
+        #h4 {
+            opacity: 0.75;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            padding: 0px;
+        }
+
+        .bottom__text img {
+            width: 30px;
+            height: 35px;
+        }
+
+        .our {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="header__top">
+            <div>
+                <h3 id="right">jera</h3>
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">Servises</a>
+                <a href="#">Pricing</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
+                <a href="https://facebook.com/yourpage" target="_blank"><img class="media"
+                        src="images\Facebook_Logo_2023.png" alt="Facebook"></a>
+                <a href="https://instagram.com/yourpage" target="_blank"><img class="media"
+                        src="images\instagram-icon-free-png.webp" alt="Instagram"></a>
+                <a href="https://twitter.com/yourpage" target="_blank"><img class="media"
+                        src="images\twitter-icon-circle-blue-logo-0902F48837-seeklogo.com.png" alt="twitter"></a>
+
+            </div>
+        </div>
+
+
+        <div class="header__stuff">
+            <div class="image">
+                <img src="images\stuff.webp" alt="image stuff">
+            </div>
+            <div class="header__text">
+                <h1 class="h1">jeera<br> agency is<br> ready to<br> take your<br> project <br></h1>
+                <button class="button__top">read more</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="main">
+        <div class="main__text">
+            <h1 class="mainh1">Our Services</h1><br>
+            <p class="mainp">_____________</p><br>
+            <h3 class="mainh3"> simply dummy text of the printing and typesetting industry</h3><br>
+        </div>
+        <div class="main__stuff">
+            <div class="one">
+                <img src="images\computer.png" alt="">
+                <h2>Creative designers</h2>
+                <div class="underone">
+                    <h3 class="oneh3">loream ipsum is simply dummy</h3>
+                    <h3 class="oneh3">text of printing</h3>
+                </div>
+            </div>
+            <div class="one">
+                <img src="images\coin.jpg" alt="">
+                <h2>Ios Developer</h2>
+                <div class="underone">
+                    <h3 class="oneh3">loream ipsum is simply dummy</h3>
+                    <h3 class="oneh3">text of printing</h3>
+                </div>
+            </div>
+            <div class="one">
+                <img src="project-1\images\maite.jpg" alt="">
+                <h2>Maintainanse</h2>
+                <div class="underone">
+                    <h3 class="oneh3">loream ipsum is simply dummy</h3>
+                    <h3 class="oneh3">text of printing</h3>
+                </div>
+            </div>
+            <div class="one">
+                <img src="images\time.jpg" alt="">
+                <h2>Time Management</h2>
+                <div class="underone">
+                    <h3 class="oneh3">loream ipsum is simply dummy</h3>
+                    <h3 class="oneh3">text of printing</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom__text">
+            <div class="zerotext">
+                <h1 class="our">Our features</h1>
+                <p id="p1">____</p>
+                <h4 id="h4">Simply a fictitious text for the printing and typesetting industry</h4>
+            </div>
+            <div class="onetext">
+                <img src="images\tech.png" alt="">
+                <h2>technical solutions</h2>
+                <div class="">
+                    <h4 id="h4">the page to let us know we can make it even better</h4>
+
+                </div>
+            </div>
+            <div class="onetext">
+                <img src="images\ops.png" alt="">
+                <h2>Unlimited features</h2>
+                <div class="">
+                    <h4 id="h4" class="bottomh3">the page to let us know we can make it even better</h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="bottom__img">
+            <img src="images\typing computer.webp" alt="">
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
